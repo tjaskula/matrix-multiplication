@@ -9,3 +9,4 @@ A,i,j,v => Nom de la matrice, indice de la ligne, indice de la colonne, valeur
 ...
 B,i,j,v 
 Je ne sais pas comment générer des matrices de manière aléatoire de telle sorte que ça soit sous ce format là. 
+- J'ai la version python 3, et j'ai utilisé un sort +1 -2 entre le map et reduce 
