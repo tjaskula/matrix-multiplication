@@ -7,8 +7,8 @@ for line in sys.stdin:
 
     if id_mat == "A":
         for x in range(1, 3):
-            print(int(row), int(x), col, val)
+            print '%d %d %s %s' % (int(row), int(x), col, val)
     else:
         for y in range(1, 3):
-            print(int(y), int(col), row, val)
+            print '%d %d %s %s' % (int(y), int(col), row, val)
 
