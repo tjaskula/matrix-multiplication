@@ -13,8 +13,8 @@ for line in sys.stdin:
 
     if id_mat == "A":
         for x in range(p):
-            print '%s %s %s %s' % (row, x, col, val)
+            print '%d %d %d %f' % (int(row), int(x), int(col), float(val))
     else:
         for x in range(m):
-            print '%s %s %s %s' % (x, col, row, val)
+            print '%d %d %d %f' % (int(x), int(col), int(row), float(val))
 

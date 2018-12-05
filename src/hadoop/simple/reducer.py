@@ -12,7 +12,7 @@ for line in sys.stdin:
     key = '%s-%s' % (sub_key1, sub_key2)
 
     try:
-        val = int(val)
+        val = float(val)
     except ValueError:
         continue
     if (current_key == key) and (current_j == j):
