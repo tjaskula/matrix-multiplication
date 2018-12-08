@@ -10,8 +10,7 @@ n = int(sys.argv[1])
 
 
 # compute/output result to STDOUT
-
-def CalculateElementMultiResult(current_key, a_value, b_value):
+def calculate_element_multi_result(current_key, a_value, b_value):
     # load block number
     a_block, b_block = current_key[0], current_key[1]
     # the range of index which involving calculation
@@ -31,8 +30,7 @@ def CalculateElementMultiResult(current_key, a_value, b_value):
 
 
 # Process input of matrix A
-
-def StoreDataToA(matrix, row, col, a_value, i_scale):
+def store_dat_to_a(row, col, a_value, i_scale):
     if row not in a_value:
         a_value[row] = dict()
     a_value[row][col] = val
@@ -41,8 +39,7 @@ def StoreDataToA(matrix, row, col, a_value, i_scale):
 
 
 # Process input of matrix B
-
-def StoreDataToB(matrix, row, col, b_value, k_scale):
+def store_data_to_b(row, col, b_value, k_scale):
     if row not in b_value:
         b_value[row] = dict()
     b_value[row][col] = val
@@ -79,9 +76,9 @@ for line in sys.stdin:
 
         # Process key/value pair
         if matrix == 'A':
-            a_value, i_scale = StoreDataToA(matrix, row, col, a_value, i_scale)
+            a_value, i_scale = store_dat_to_a(row, col, a_value, i_scale)
         else:
-            b_value, k_scale = StoreDataToB(matrix, row, col, b_value, k_scale)
+            b_value, k_scale = store_data_to_b(row, col, b_value, k_scale)
 
     # Otherwise, if this is a new key...
     else:
@@ -89,7 +86,7 @@ for line in sys.stdin:
         # If this is a new key and not the first key we've seen
         if current_key:
             # compute/output result to STDOUT
-            CalculateElementMultiResult(current_key, a_value, b_value)
+            calculate_element_multi_result(current_key, a_value, b_value)
 
         current_key = key
         current_res = 0
@@ -98,12 +95,11 @@ for line in sys.stdin:
 
         # Process input for new key
         if matrix == 'A':
-            a_value, i_scale = StoreDataToA(matrix, row, col, a_value, i_scale)
+            a_value, i_scale = store_dat_to_a(row, col, a_value, i_scale)
         else:
-            b_value, k_scale = StoreDataToB(matrix, row, col, b_value, k_scale)
+            b_value, k_scale = store_data_to_b(row, col, b_value, k_scale)
 
 # Compute/output result for the last key
-
 if current_key:
     # compute/output result to STDOUT
-    CalculateElementMultiResult(current_key, a_value, b_value)
+    calculate_element_multi_result(current_key, a_value, b_value)
