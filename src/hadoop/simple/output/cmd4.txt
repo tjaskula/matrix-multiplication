@@ -1,0 +1,1 @@
+[hadoop@ip-172-30-0-7 ~]$ hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming.jar -input /user/hadoop/matrix/simple/input -output /user/hadoop/matrix/simple/output4 -file /home/hadoop/mapper.py -mapper '/home/hadoop/mapper.py 80 160' -file /home/hadoop/reducer.py -reducer /home/hadoop/reducer.py -jobconf mapred.reduce.tasks=1
