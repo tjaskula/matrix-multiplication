@@ -1,63 +1,60 @@
-18/12/08 19:13:43 INFO mapreduce.Job:  map 0% reduce 0%
-18/12/08 19:13:51 INFO mapreduce.Job:  map 13% reduce 0%
-18/12/08 19:13:52 INFO mapreduce.Job:  map 19% reduce 0%
-18/12/08 19:13:58 INFO mapreduce.Job:  map 63% reduce 0%
-18/12/08 19:14:01 INFO mapreduce.Job:  map 75% reduce 0%
-18/12/08 19:14:03 INFO mapreduce.Job:  map 81% reduce 0%
-18/12/08 19:14:04 INFO mapreduce.Job:  map 94% reduce 0%
-18/12/08 19:14:06 INFO mapreduce.Job:  map 100% reduce 14%
-18/12/08 19:14:07 INFO mapreduce.Job:  map 100% reduce 29%
-18/12/08 19:14:08 INFO mapreduce.Job:  map 100% reduce 43%
-18/12/08 19:14:09 INFO mapreduce.Job:  map 100% reduce 86%
-18/12/08 19:14:11 INFO mapreduce.Job:  map 100% reduce 100%
-18/12/08 19:14:11 INFO mapreduce.Job: Job job_1544290529160_0002 completed successfully
-18/12/08 19:14:11 INFO mapreduce.Job: Counters: 51
+18/12/08 19:53:18 INFO mapreduce.Job: Running job: job_1544290529160_0007
+18/12/08 19:53:25 INFO mapreduce.Job: Job job_1544290529160_0007 running in uber mode : false
+18/12/08 19:53:25 INFO mapreduce.Job:  map 0% reduce 0%
+18/12/08 19:53:34 INFO mapreduce.Job:  map 6% reduce 0%
+18/12/08 19:53:39 INFO mapreduce.Job:  map 13% reduce 0%
+18/12/08 19:53:40 INFO mapreduce.Job:  map 69% reduce 0%
+18/12/08 19:53:42 INFO mapreduce.Job:  map 75% reduce 0%
+18/12/08 19:53:44 INFO mapreduce.Job:  map 94% reduce 0%
+18/12/08 19:53:45 INFO mapreduce.Job:  map 100% reduce 0%
+18/12/08 19:53:46 INFO mapreduce.Job:  map 100% reduce 100%
+18/12/08 19:53:46 INFO mapreduce.Job: Job job_1544290529160_0007 completed successfully
+18/12/08 19:53:47 INFO mapreduce.Job: Counters: 50
 	File System Counters
-		FILE: Number of bytes read=84617
-		FILE: Number of bytes written=3196720
+		FILE: Number of bytes read=68539
+		FILE: Number of bytes written=2360920
 		FILE: Number of read operations=0
 		FILE: Number of large read operations=0
 		FILE: Number of write operations=0
 		HDFS: Number of bytes read=84776
-		HDFS: Number of bytes written=21122
-		HDFS: Number of read operations=69
+		HDFS: Number of bytes written=4000
+		HDFS: Number of read operations=51
 		HDFS: Number of large read operations=0
-		HDFS: Number of write operations=14
+		HDFS: Number of write operations=2
 	Job Counters
-		Killed map tasks=1
 		Launched map tasks=16
-		Launched reduce tasks=7
-		Data-local map tasks=9
-		Rack-local map tasks=7
-		Total time spent by all maps in occupied slots (ms)=6752016
-		Total time spent by all reduces in occupied slots (ms)=4442592
-		Total time spent by all map tasks (ms)=140667
-		Total time spent by all reduce tasks (ms)=46277
-		Total vcore-milliseconds taken by all map tasks=140667
-		Total vcore-milliseconds taken by all reduce tasks=46277
-		Total megabyte-milliseconds taken by all map tasks=216064512
-		Total megabyte-milliseconds taken by all reduce tasks=142162944
+		Launched reduce tasks=1
+		Data-local map tasks=8
+		Rack-local map tasks=8
+		Total time spent by all maps in occupied slots (ms)=7621632
+		Total time spent by all reduces in occupied slots (ms)=423360
+		Total time spent by all map tasks (ms)=158784
+		Total time spent by all reduce tasks (ms)=4410
+		Total vcore-milliseconds taken by all map tasks=158784
+		Total vcore-milliseconds taken by all reduce tasks=4410
+		Total megabyte-milliseconds taken by all map tasks=243892224
+		Total megabyte-milliseconds taken by all reduce tasks=13547520
 	Map-Reduce Framework
 		Map input records=900
 		Map output records=12000
 		Map output bytes=226760
-		Map output materialized bytes=100352
+		Map output materialized bytes=68320
 		Input split bytes=2432
 		Combine input records=0
 		Combine output records=0
 		Reduce input groups=11991
-		Reduce shuffle bytes=100352
+		Reduce shuffle bytes=68320
 		Reduce input records=12000
-		Reduce output records=1399
+		Reduce output records=200
 		Spilled Records=24000
-		Shuffled Maps =112
+		Shuffled Maps =16
 		Failed Shuffles=0
-		Merged Map outputs=112
-		GC time elapsed (ms)=3730
-		CPU time spent (ms)=21210
-		Physical memory (bytes) snapshot=8034324480
-		Virtual memory (bytes) snapshot=84729262080
-		Total committed heap usage (bytes)=7354187776
+		Merged Map outputs=16
+		GC time elapsed (ms)=3170
+		CPU time spent (ms)=13550
+		Physical memory (bytes) snapshot=6638358528
+		Virtual memory (bytes) snapshot=56969953280
+		Total committed heap usage (bytes)=6191841280
 	Shuffle Errors
 		BAD_ID=0
 		CONNECTION=0
@@ -68,5 +65,5 @@
 	File Input Format Counters
 		Bytes Read=82344
 	File Output Format Counters
-		Bytes Written=21122
-18/12/08 19:14:11 INFO streaming.StreamJob: Output directory: /user/hadoop/matrix/simple/output1
+		Bytes Written=4000
+18/12/08 19:53:47 INFO streaming.StreamJob: Output directory: /user/hadoop/matrix/simple/output1
