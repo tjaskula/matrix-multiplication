@@ -1,0 +1,70 @@
+18/12/08 21:16:52 INFO mapreduce.Job: Job job_1544290529160_0014 running in uber mode : false
+18/12/08 21:16:52 INFO mapreduce.Job:  map 0% reduce 0%
+18/12/08 21:17:00 INFO mapreduce.Job:  map 6% reduce 0%
+18/12/08 21:17:01 INFO mapreduce.Job:  map 19% reduce 0%
+18/12/08 21:17:05 INFO mapreduce.Job:  map 25% reduce 0%
+18/12/08 21:17:08 INFO mapreduce.Job:  map 69% reduce 0%
+18/12/08 21:17:12 INFO mapreduce.Job:  map 81% reduce 0%
+18/12/08 21:17:14 INFO mapreduce.Job:  map 88% reduce 0%
+18/12/08 21:17:15 INFO mapreduce.Job:  map 100% reduce 27%
+18/12/08 21:17:17 INFO mapreduce.Job:  map 100% reduce 100%
+18/12/08 21:17:17 INFO mapreduce.Job: Job job_1544290529160_0014 completed successfully
+18/12/08 21:17:17 INFO mapreduce.Job: Counters: 51
+	File System Counters
+		FILE: Number of bytes read=600900
+		FILE: Number of bytes written=3380583
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=366128
+		HDFS: Number of bytes written=17713
+		HDFS: Number of read operations=51
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters
+		Killed map tasks=1
+		Launched map tasks=16
+		Launched reduce tasks=1
+		Data-local map tasks=8
+		Rack-local map tasks=8
+		Total time spent by all maps in occupied slots (ms)=7060848
+		Total time spent by all reduces in occupied slots (ms)=1351392
+		Total time spent by all map tasks (ms)=147101
+		Total time spent by all reduce tasks (ms)=14077
+		Total vcore-milliseconds taken by all map tasks=147101
+		Total vcore-milliseconds taken by all reduce tasks=14077
+		Total megabyte-milliseconds taken by all map tasks=225947136
+		Total megabyte-milliseconds taken by all reduce tasks=43244544
+	Map-Reduce Framework
+		Map input records=3600
+		Map output records=96000
+		Map output bytes=1957580
+		Map output materialized bytes=555622
+		Input split bytes=2432
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=95980
+		Reduce shuffle bytes=555622
+		Reduce input records=96000
+		Reduce output records=800
+		Spilled Records=192000
+		Shuffled Maps =16
+		Failed Shuffles=0
+		Merged Map outputs=16
+		GC time elapsed (ms)=3010
+		CPU time spent (ms)=17140
+		Physical memory (bytes) snapshot=6651678720
+		Virtual memory (bytes) snapshot=57014927360
+		Total committed heap usage (bytes)=6181355520
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters
+		Bytes Read=363696
+	File Output Format Counters
+		Bytes Written=17713
+18/12/08 21:17:17 INFO streaming.StreamJob: Output directory: /user/hadoop/matrix/simple/output2
