@@ -1,0 +1,1 @@
+hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming.jar -input /user/hadoop/matrix/advanced/input -output /user/hadoop/matrix/advanced/output3 -file /home/hadoop/mapper.py -mapper '/home/hadoop/mapper.py 40 80' -file /home/hadoop/reducer.py -reducer '/home/hadoop/reducer.py 120' -jobconf mapred.reduce.tasks=1
