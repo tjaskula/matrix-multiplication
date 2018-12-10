@@ -4,16 +4,26 @@ import pyspark
 from pyspark.sql import SparkSession
 from pyspark.mllib.linalg.distributed import CoordinateMatrix, MatrixEntry
 import operator
+from contextlib import contextmanager
+import time
+import logging
 
 import os
 os.environ['PYSPARK_PYTHON'] = '/usr/local/anaconda3/envs/spark/bin/python3'
 
-sc = pyspark.SparkContext(appName="Matrix Multiplication")
+@contextmanager
+def time_usage(name=""):
+    """log the time usage in a code block
+    prefix: the prefix text to show
+    """
+    start = time.time()
+    yield
+    end = time.time()
+    elapsed_seconds = float("%.4f" % (end - start))
+    logging.info('%s: elapsed seconds: %s', name, elapsed_seconds)
 
-matrix_a_raw = sc.textFile(sys.argv[1])
-matrix_b_raw = sc.textFile(sys.argv[2])
 
-spark = SparkSession(sc)
+logging.getLogger().setLevel(logging.INFO)
 
 def to_matrix_a(x):
     i, j, v = x.split(',')
@@ -27,9 +37,6 @@ def to_matrix_entry(x):
     i, j, v = x.split()
     return MatrixEntry(i, j, v)
 
-entries_a = matrix_a_raw.map(to_matrix_a)
-entries_b = matrix_b_raw.map(to_matrix_b)
-
 def multiply_mat(x):
     left = x[1][0]
     right = x[1][1]
@@ -37,10 +44,25 @@ def multiply_mat(x):
     k, w = right
     return ((i, k), (int(v) * int(w)))
 
-product_entries = entries_a \
-    .join(entries_b) \
-    .map(multiply_mat) \
-    .reduceByKey(operator.add) \
-    .map(lambda x:  (x[0][0], x[0][1], x[1]))
+sc = pyspark.SparkContext(appName="Matrix Multiplication")
 
-product_entries.collect()
+for i in range(1, 10):
+    with time_usage("temps matrix multiplication"):
+        matrix_a_raw = sc.textFile(sys.argv[1])
+        matrix_b_raw = sc.textFile(sys.argv[2])
+
+        spark = SparkSession(sc)
+
+        entries_a = matrix_a_raw.map(to_matrix_a)
+        entries_b = matrix_b_raw.map(to_matrix_b)
+
+        product_entries = entries_a \
+            .join(entries_b) \
+            .map(multiply_mat) \
+            .reduceByKey(operator.add) \
+            .map(lambda x:  (x[0][0], x[0][1], x[1]))
+
+        result = product_entries.collect()
+
+#for t in result:
+    #print('%s, %s, %s' % (t[0], t[1], t[2]))
